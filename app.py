@@ -47,9 +47,10 @@ def upload():
         score=score
     )
 
-if __name__ == "__main__":
-    import os
+if not os.path.exists(UPLOAD_FOLDER):
+    os.makedirs(UPLOAD_FOLDER)
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
     app.run(host="0.0.0.0", port=port)
+
