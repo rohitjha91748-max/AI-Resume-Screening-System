@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Resume Screening System</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <video autoplay muted loop playsinline id="bg-video">
+        <source src="{{ url_for('static', filename='videos/background.mp4') }}" type="video/mp4">
+    </video>
+
+    <div class="overlay"></div>
+
+    <nav class="navbar">
+
+        <div class="logo">
+            Resume<span>AI</span>
+        </div>
+
+        <div class="nav-links">
+            <a href="#">Home</a>
+            <a href="#">Features</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </div>
+
+    </nav>
+
+    <div class="glass-box">
+
+        <div class="hero">
+
+            <h1>
+                AI Resume<br>
+                Screening System
+            </h1>
+
+            <p>
+                Upload your resume and let AI analyze skills,
+                ATS score, keyword matching and job compatibility.
+            </p>
+
+        </div>
+
+        <form action="/upload"
+              method="POST"
+              enctype="multipart/form-data">
+
+            <label class="file-label">
+
+                📄 Choose Resume
+
+                <input
+                    type="file"
+                    name="resume"
+                    id="resumeInput"
+                    required>
+
+            </label>
+
+            <div class="file-name" id="fileName">
+                No file selected
+            </div>
+
+            <button id="uploadBtn" type="submit">
+                Upload Resume →
+            </button>
+
+        </form>
+
+        <div class="stats">
+
+            <div class="stat">
+                <h2>95%</h2>
+                <p>ATS Accuracy</p>
+            </div>
+
+            <div class="stat">
+                <h2>10K+</h2>
+                <p>Resumes Screened</p>
+            </div>
+
+            <div class="stat">
+                <h2>24/7</h2>
+                <p>AI Analysis</p>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- External JavaScript -->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+
+</html>
